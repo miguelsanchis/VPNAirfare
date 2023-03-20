@@ -131,3 +131,4 @@ dmypy.json
 # vscode dependencies
 .vscode
 VPNAirfare.code-workspace
+.DS_Store
