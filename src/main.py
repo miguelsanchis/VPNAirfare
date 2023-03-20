@@ -2,6 +2,12 @@ from datetime import datetime
 
 import requests
 from openvpn_api import VPN
+import os
+import subprocess
+import time
+
+
+
 
 # Skyscanner API key and URL
 SKYSCANNER_API_KEY = 'your_api_key'
@@ -14,10 +20,12 @@ COUNTRIES = [
     # Add more countries here
 ]
 
-def connect_to_vpn(country_code):
+def connect_to_vpn():
     """Connect to the VPN using the given country code."""
-    vpn = VPN()
-    vpn.connect(credentials=VPN_CREDENTIALS, config_file=f'config/{country_code}.ovpn')
+    vpn = VPN(host="100.96.1.16")
+    #vpn.connect(credentials=VPN_CREDENTIALS, config_file=f'config/{country_code}.ovpn')
+    vpn.connection()
+    vpn.connect()
     return vpn
 
 def disconnect_from_vpn(vpn):
@@ -47,4 +55,4 @@ def main():
             print(f"Country: {country['name']} - No flights found - Origin: {origin} - Destination: {destination}")
 
 if __name__ == '__main__':
-    exit()
+    connect_to_vpn()
