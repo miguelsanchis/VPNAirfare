@@ -1,0 +1,13 @@
+certifi==2022.12.7
+charset-normalizer==3.1.0
+DateTime==5.1
+humanize==4.6.0
+idna==3.4
+netaddr==0.8.0
+openvpn-api==0.3.0
+openvpn-status==0.2.2
+pytz==2022.7.1
+requests==2.28.2
+six==1.16.0
+urllib3==1.26.15
+zope.interface==6.0
